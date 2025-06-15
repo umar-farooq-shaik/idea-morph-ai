@@ -1,21 +1,17 @@
 
-import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle, Medal, Search, Users, GitMerge, FileText, Landmark, Lightbulb, Briefcase, MessageSquare, Map, GaugeCircle } from 'lucide-react';
-import { LucideIcon } from 'lucide-react';
-
-const featuresList: { title: string; icon: LucideIcon }[] = [
-    { title: "Idea Validation", icon: CheckCircle },
-    { title: "Founder Fit", icon: Medal },
-    { title: "Competitor Scan", icon: Search },
-    { title: "Target Audience", icon: Users },
-    { title: "Problem–Solution Fit", icon: GitMerge },
-    { title: "Roadmap", icon: Map },
-    { title: "Documents You Need", icon: FileText },
-    { title: "Funding Strategy", icon: Landmark },
-    { title: "Name & Domain Suggestions", icon: Lightbulb },
-    { title: "Business Model", icon: Briefcase },
-    { title: "Chatbot FAQ Setup", icon: MessageSquare },
-    { title: "Execution Score", icon: GaugeCircle },
+const featuresList: { title: string }[] = [
+    { title: "Idea Validation" },
+    { title: "Founder Fit" },
+    { title: "Competitor Scan" },
+    { title: "Target Audience" },
+    { title: "Problem–Solution Fit" },
+    { title: "Roadmap" },
+    { title: "Documents You Need" },
+    { title: "Funding Strategy" },
+    { title: "Name & Domain Suggestions" },
+    { title: "Business Model" },
+    { title: "Chatbot FAQ Setup" },
+    { title: "Execution Score" },
 ];
 
 const Features = () => {
@@ -28,14 +24,12 @@ const Features = () => {
             A complete, expert-level business plan covering every critical area of your startup.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {featuresList.map((feature) => (
-            <Card key={feature.title} className="bg-card shadow-md hover:shadow-lg transition-shadow border-border">
-              <CardContent className="p-6 flex items-center gap-4">
-                <feature.icon className="h-6 w-6 text-accent" />
-                <span className="font-semibold text-foreground">{feature.title}</span>
-              </CardContent>
-            </Card>
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+          {featuresList.map((feature, index) => (
+            <div key={feature.title} className="bg-card border border-border rounded-lg p-4 flex items-center transition-all hover:shadow-md">
+              <span className="text-primary font-bold mr-4 text-lg">{String(index + 1).padStart(2, '0')}</span>
+              <span className="font-semibold text-foreground">{feature.title}</span>
+            </div>
           ))}
         </div>
       </div>

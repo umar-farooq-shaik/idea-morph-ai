@@ -1,13 +1,11 @@
 
-import { Card, CardContent } from '@/components/ui/card';
-import { User, Users, Code, Building } from 'lucide-react';
-import { LucideIcon } from 'lucide-react';
+import { Card } from '@/components/ui/card';
 
-const audiences: { title: string; icon: LucideIcon }[] = [
-  { title: "First-time founders", icon: Users },
-  { title: "Solo founders", icon: User },
-  { title: "Hackathon builders", icon: Code },
-  { title: "Startup incubators", icon: Building },
+const audiences: { title: string }[] = [
+  { title: "First-time founders" },
+  { title: "Solo founders" },
+  { title: "Hackathon builders" },
+  { title: "Startup incubators" },
 ];
 
 const WhosItFor = () => {
@@ -19,13 +17,8 @@ const WhosItFor = () => {
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {audiences.map((audience) => (
-            <Card key={audience.title} className="bg-card text-center border-border">
-              <CardContent className="p-6">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary mb-4">
-                  <audience.icon className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <p className="font-semibold text-lg text-foreground">{audience.title}</p>
-              </CardContent>
+            <Card key={audience.title} className="bg-card text-center border-border p-8 flex items-center justify-center transition-all hover:shadow-xl hover:-translate-y-1">
+              <p className="font-semibold text-lg text-foreground">{audience.title}</p>
             </Card>
           ))}
         </div>

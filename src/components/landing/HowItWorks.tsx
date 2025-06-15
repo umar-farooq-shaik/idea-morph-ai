@@ -1,21 +1,20 @@
 
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Lightbulb, ListChecks, LayoutDashboard } from 'lucide-react';
 
 const steps = [
   {
-    icon: Lightbulb,
-    title: '1. Enter your startup idea',
+    number: '01',
+    title: 'Enter your startup idea',
     description: 'Describe your vision in a few sentences. Our AI analyzes the core concept.'
   },
   {
-    icon: ListChecks,
-    title: '2. AI breaks it into 12 sections',
+    number: '02',
+    title: 'AI breaks it into 12 sections',
     description: 'From validation to funding, we generate a complete business blueprint for you.'
   },
   {
-    icon: LayoutDashboard,
-    title: '3. Get your startup dashboard',
+    number: '03',
+    title: 'Get your startup dashboard',
     description: 'Explore your personalized plan, simulate scenarios, and start executing.'
   }
 ];
@@ -32,11 +31,9 @@ const HowItWorks = () => {
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
           {steps.map((step, index) => (
-            <Card key={index} className="bg-card text-center border-border">
-              <CardHeader>
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary mb-4">
-                  <step.icon className="h-6 w-6 text-primary-foreground" />
-                </div>
+            <Card key={index} className="bg-card text-left border-border p-6 transition-all hover:shadow-lg hover:-translate-y-1">
+              <CardHeader className="p-0">
+                <span className="text-4xl font-bold text-primary mb-4">{step.number}</span>
                 <CardTitle className="text-xl">{step.title}</CardTitle>
                 <CardDescription className="text-base mt-2">{step.description}</CardDescription>
               </CardHeader>
