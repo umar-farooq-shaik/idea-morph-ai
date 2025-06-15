@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
@@ -43,7 +44,7 @@ const Index = () => {
             <ResultsDisplay response={response} />
           </div>
         ) : (
-          <div className="max-w-3xl mx-auto mt-12 text-center">
+          <div className="max-w-3xl mx-auto mt-8 text-center">
             {isLoading ? (
               <div>
                 <Loader2 className="h-16 w-16 animate-spin mx-auto text-primary" />
