@@ -37,8 +37,27 @@ const sectionMap = {
   executionScore: { component: ExecutionScoreCircle, icon: BrainCircuit },
 };
 
+const sectionOrder: Array<keyof CofounderResponse> = [
+  'ideaValidation',
+  'problemSolution',
+  'targetAudience',
+  'founderFit',
+  'competitorScan',
+  'businessModel',
+  'nameAndDomains',
+  'roadmap',
+  'fundingStrategy',
+  'documentsNeeded',
+  'chatbotSetup',
+  'executionScore',
+];
+
 const ResultsDisplay = ({ response }: ResultsDisplayProps) => {
-  const sections = Object.entries(response);
+  const sections = sectionOrder.map(key => [key, response[key]]).filter(([, value]) => value);
+
+  if (!sections.length) {
+    return null;
+  }
 
   return (
     <Tabs
@@ -53,7 +72,7 @@ const ResultsDisplay = ({ response }: ResultsDisplayProps) => {
           return (
             <TabsTrigger
               key={key}
-              value={key}
+              value={key as string}
               className="w-full flex gap-2 justify-start p-3 text-foreground rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm hover:bg-muted data-[state=active]:hover:bg-primary/90"
             >
               <Icon className="h-5 w-5 flex-shrink-0" />
@@ -69,7 +88,7 @@ const ResultsDisplay = ({ response }: ResultsDisplayProps) => {
           if (!Component) return null;
           
           return (
-            <TabsContent key={key} value={key} className="mt-0 ring-offset-background focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0">
+            <TabsContent key={key} value={key as string} className="mt-0 ring-offset-background focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0">
               <Component data={value} />
             </TabsContent>
           );
