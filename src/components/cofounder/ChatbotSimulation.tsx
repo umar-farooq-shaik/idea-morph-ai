@@ -10,7 +10,7 @@ const ChatbotSimulation = ({ data }) => (
       {data.faqs.map((faq, i) => (
         <div key={i}>
           <div className="flex items-start gap-3 justify-end">
-            <div className="p-3 rounded-lg max-w-sm text-white" style={{ backgroundColor: data.colors.user }}>
+            <div className="p-3 rounded-lg max-w-sm bg-primary text-primary-foreground">
               {faq.user}
             </div>
             <Avatar>
@@ -21,7 +21,7 @@ const ChatbotSimulation = ({ data }) => (
             <Avatar>
               <AvatarFallback><Bot /></AvatarFallback>
             </Avatar>
-            <div className="p-3 rounded-lg max-w-sm" style={{ backgroundColor: data.colors.bot }}>
+            <div className="p-3 rounded-lg max-w-sm bg-card border">
               {faq.bot}
             </div>
           </div>
