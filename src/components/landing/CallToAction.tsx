@@ -12,7 +12,7 @@ const CallToAction = () => {
             Free forever. No signup required. Get started in seconds and see your vision come to life.
           </p>
           <div className="mt-8">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
+            <Button size="lg" asChild>
               <Link to="/app">Try Cofounder AI Now</Link>
             </Button>
           </div>
