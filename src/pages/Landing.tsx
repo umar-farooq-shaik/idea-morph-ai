@@ -10,6 +10,7 @@ import WhosItFor from '@/components/landing/WhosItFor';
 import FAQ from '@/components/landing/FAQ';
 import FinalCTA from '@/components/landing/FinalCTA';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import CallToAction from '@/components/landing/CallToAction';
 
 const Landing = () => {
   return (
@@ -27,6 +28,7 @@ const Landing = () => {
         <Testimonials />
         <WhosItFor />
         <FAQ />
+        <CallToAction />
       </main>
       <FinalCTA />
     </div>
