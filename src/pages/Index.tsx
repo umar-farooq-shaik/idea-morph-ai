@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
@@ -36,7 +35,7 @@ const Index = () => {
         <Header />
 
         {response ? (
-          <div className="mt-8">
+          <div className="mt-8 md:mt-0">
             <div className="flex justify-between items-center mb-6">
                <h2 className="text-2xl font-bold text-muted-foreground">Your Startup Blueprint for: <span className="text-foreground">{idea}</span></h2>
               <Button onClick={handleReset} variant="outline">Start Over</Button>

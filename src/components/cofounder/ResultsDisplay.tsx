@@ -2,8 +2,7 @@
 import { CofounderResponse } from '@/pages/Index';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-  BookOpen, CheckCircle2, Bot, BrainCircuit, Briefcase, Calendar, ClipboardList,
-  FileText, Flag, Landmark, Lightbulb, Target, Users
+  CheckCircle2, Bot, BrainCircuit, Briefcase, FileText, Flag, Landmark, Lightbulb, Target, Users
 } from 'lucide-react';
 
 import IdeaValidationCard from './IdeaValidationCard';
@@ -42,25 +41,35 @@ const ResultsDisplay = ({ response }: ResultsDisplayProps) => {
   const sections = Object.entries(response);
 
   return (
-    <Tabs defaultValue={sections[0][0]} className="w-full">
-      <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2 h-auto">
+    <Tabs defaultValue={sections[0][0]} orientation="vertical" className="w-full flex flex-col md:flex-row md:gap-6">
+      <TabsList className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:flex md:flex-col md:w-[280px] md:flex-shrink-0 md:bg-gray-50 md:p-2 md:rounded-lg md:space-y-1 h-auto bg-transparent p-0">
         {sections.map(([key, value]) => {
           const Icon = sectionMap[key as keyof typeof sectionMap]?.icon || Lightbulb;
           return (
-            <TabsTrigger key={key} value={key} className="flex gap-2 justify-start p-3">
-              <Icon className="h-5 w-5" />
-              <span>{value.title}</span>
+            <TabsTrigger
+              key={key}
+              value={key}
+              className="w-full flex gap-2 justify-start p-3 text-gray-900 rounded-md data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-sm hover:bg-gray-100 data-[state=active]:hover:bg-blue-700"
+            >
+              <Icon className="h-5 w-5 flex-shrink-0" />
+              <span className="truncate">{value.title}</span>
             </TabsTrigger>
           );
         })}
       </TabsList>
       
-      {sections.map(([key, value]) => {
-        const Component = sectionMap[key as keyof typeof sectionMap]?.component;
-        if (!Component) return null;
-        
-        return <TabsContent key={key} value={key}><Component data={value} /></TabsContent>;
-      })}
+      <div className="flex-grow mt-4 md:mt-0">
+        {sections.map(([key, value]) => {
+          const Component = sectionMap[key as keyof typeof sectionMap]?.component;
+          if (!Component) return null;
+          
+          return (
+            <TabsContent key={key} value={key} className="mt-0 ring-offset-background focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0">
+              <Component data={value} />
+            </TabsContent>
+          );
+        })}
+      </div>
     </Tabs>
   );
 };
