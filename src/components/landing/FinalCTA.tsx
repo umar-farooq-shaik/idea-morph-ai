@@ -1,12 +1,9 @@
-
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-
 const FinalCTA = () => {
-  return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 pt-16 pb-8 sm:pt-20">
-        <div className="text-center">
+  return <footer className="bg-primary text-primary-foreground">
+      <div className="container mx-auto px-4 pt-16 pb-8 sm:pt-20 py-0">
+        <div className="text-center py-[50px]">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Ready to turn your idea into a startup?</h2>
           <p className="mt-4 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
             Free forever. No signup required. Get started in seconds and see your vision come to life.
@@ -18,7 +15,7 @@ const FinalCTA = () => {
           </div>
         </div>
         
-        <div className="mt-16 pt-8 border-t border-primary-foreground/20">
+        <div className="mt-16 pt-8 border-t border-primary-foreground/20 py-[12px]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-2">
               <span className="font-bold">Cofounder<span className="text-accent">AI</span></span>
@@ -35,8 +32,6 @@ const FinalCTA = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default FinalCTA;
