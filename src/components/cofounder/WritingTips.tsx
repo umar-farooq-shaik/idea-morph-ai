@@ -18,7 +18,7 @@ const WritingTips = () => {
         </h2>
         <div className="space-y-4">
           {tips.map((tip, index) => (
-            <div key={index} className="flex gap-4 items-baseline">
+            <div key={index} className="flex gap-4 items-start">
               <div className="flex-shrink-0 bg-primary text-primary-foreground p-2 rounded-full w-10 h-10 flex items-center justify-center">
                 <span className="text-lg">{tip.emoji}</span>
               </div>
