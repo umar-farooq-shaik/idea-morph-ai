@@ -1,6 +1,6 @@
 
 import SectionCard from './SectionCard';
-import { ResponsiveContainer, RadialBarChart, RadialBar, Legend, Cell } from 'recharts';
+import { ResponsiveContainer, RadialBarChart, RadialBar } from 'recharts';
 
 const ExecutionScoreCircle = ({ data }) => {
   const scoreColor = data.score < 50 ? data.colors.low : data.score < 80 ? data.colors.medium : data.colors.high;
@@ -20,7 +20,6 @@ const ExecutionScoreCircle = ({ data }) => {
               endAngle={-270}
             >
               <RadialBar
-                minAngle={15}
                 background
                 clockWise
                 dataKey="value"
