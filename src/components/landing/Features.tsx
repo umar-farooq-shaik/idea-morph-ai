@@ -1,15 +1,15 @@
 
 const featuresList: { title: string }[] = [
     { title: "Idea Validation" },
+    { title: "Problem–Solution Fit" },
+    { title: "Target Audience" },
     { title: "Founder Fit" },
     { title: "Competitor Scan" },
-    { title: "Target Audience" },
-    { title: "Problem–Solution Fit" },
-    { title: "Roadmap" },
-    { title: "Documents You Need" },
-    { title: "Funding Strategy" },
-    { title: "Name & Domain Suggestions" },
     { title: "Business Model" },
+    { title: "Name & Domain Suggestions" },
+    { title: "Roadmap" },
+    { title: "Funding Strategy" },
+    { title: "Documents You Need" },
     { title: "Chatbot FAQ Setup" },
     { title: "Execution Score" },
 ];
