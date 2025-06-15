@@ -1,9 +1,13 @@
 
 import { BrainCircuit } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
 
 const Header = () => {
   return (
-    <header className="text-center mb-12">
+    <header className="text-center mb-12 relative">
+       <div className="absolute top-0 right-0">
+        <ThemeToggle />
+      </div>
       <div className="inline-flex items-center gap-3">
         <BrainCircuit className="h-10 w-10 text-foreground" />
         <h1 className="text-4xl md:text-5xl font-extrabold text-foreground">
