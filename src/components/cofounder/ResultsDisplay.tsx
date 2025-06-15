@@ -25,17 +25,17 @@ interface ResultsDisplayProps {
 
 const sectionMap = {
   ideaValidation: { component: IdeaValidationCard, icon: Lightbulb },
-  founderFit: { component: Users, icon: Users },
-  competitorScan: { component: Target, icon: Target },
-  targetAudience: { component: Users, icon: Users },
-  problemSolution: { component: CheckCircle2, icon: CheckCircle2 },
-  roadmap: { component: Flag, icon: Flag },
-  documentsNeeded: { component: FileText, icon: FileText },
-  fundingStrategy: { component: Landmark, icon: Landmark },
-  nameAndDomains: { component: Briefcase, icon: Briefcase },
-  businessModel: { component: BrainCircuit, icon: BrainCircuit },
-  chatbotSetup: { component: Bot, icon: Bot },
-  executionScore: { component: BrainCircuit, icon: BrainCircuit },
+  founderFit: { component: FounderFitCard, icon: Users },
+  competitorScan: { component: CompetitorScanCard, icon: Target },
+  targetAudience: { component: TargetAudienceCard, icon: Users },
+  problemSolution: { component: ProblemSolutionCard, icon: CheckCircle2 },
+  roadmap: { component: RoadmapTimeline, icon: Flag },
+  documentsNeeded: { component: DocumentsGrid, icon: FileText },
+  fundingStrategy: { component: FundingStrategyAccordion, icon: Landmark },
+  nameAndDomains: { component: NameAndDomainsList, icon: Briefcase },
+  businessModel: { component: BusinessModelCard, icon: BrainCircuit },
+  chatbotSetup: { component: ChatbotSimulation, icon: Bot },
+  executionScore: { component: ExecutionScoreCircle, icon: BrainCircuit },
 };
 
 const ResultsDisplay = ({ response }: ResultsDisplayProps) => {
@@ -58,7 +58,7 @@ const ResultsDisplay = ({ response }: ResultsDisplayProps) => {
       {sections.map(([key, value]) => {
         const Component = sectionMap[key as keyof typeof sectionMap]?.component;
         if (!Component) return null;
-        // @ts-ignore
+        
         return <TabsContent key={key} value={key}><Component data={value} /></TabsContent>;
       })}
     </Tabs>
