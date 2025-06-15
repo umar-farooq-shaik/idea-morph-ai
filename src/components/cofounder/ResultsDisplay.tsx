@@ -45,7 +45,7 @@ const ResultsDisplay = ({ response }: ResultsDisplayProps) => {
       defaultValue={sections[0][0]}
       orientation="vertical"
       className="w-full flex flex-col md:flex-row md:gap-6"
-      onValueChange={() => window.scrollTo(0, 0)}
+      onValueChange={() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' })}
     >
       <TabsList className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:flex md:flex-col md:w-[280px] md:flex-shrink-0 md:bg-secondary md:p-2 md:rounded-lg md:space-y-1 h-auto bg-transparent p-0">
         {sections.map(([key, value]) => {
