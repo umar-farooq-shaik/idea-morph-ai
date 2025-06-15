@@ -19,13 +19,13 @@ const TargetAudienceCard = ({ data }) => (
           </div>
           <div>
             <h5 className="font-semibold mb-2">Habits</h5>
-            <ul className="list-disc list-inside text-gray-300">
+            <ul className="list-disc list-inside text-muted-foreground">
               {p.habits.map((item, j) => <li key={j}>{item}</li>)}
             </ul>
           </div>
            <div>
             <h5 className="font-semibold mb-2">Needs</h5>
-            <ul className="list-disc list-inside text-gray-300">
+            <ul className="list-disc list-inside text-muted-foreground">
               {p.needs.map((item, j) => <li key={j}>{item}</li>)}
             </ul>
           </div>

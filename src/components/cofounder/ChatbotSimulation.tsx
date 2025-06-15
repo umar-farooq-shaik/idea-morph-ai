@@ -6,7 +6,7 @@ import { Bot, User } from 'lucide-react';
 const ChatbotSimulation = ({ data }) => (
   <SectionCard title={data.title} summary={data.summary} cta={data.cta}>
     <p className="mb-6">{data.content}</p>
-    <div className="p-6 rounded-lg space-y-6" style={{ backgroundColor: '#030712' }}>
+    <div className="p-6 rounded-lg space-y-6 bg-secondary">
       {data.faqs.map((faq, i) => (
         <div key={i}>
           <div className="flex items-start gap-3 justify-end">

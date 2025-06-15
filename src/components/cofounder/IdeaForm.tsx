@@ -20,7 +20,7 @@ const IdeaForm = ({ onSubmit }: IdeaFormProps) => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <label htmlFor="startup-idea" className="text-2xl font-bold block text-gray-200">
+      <label htmlFor="startup-idea" className="text-2xl font-bold block text-foreground">
         Enter your startup idea
       </label>
       <Textarea
@@ -28,7 +28,7 @@ const IdeaForm = ({ onSubmit }: IdeaFormProps) => {
         value={idea}
         onChange={(e) => setIdea(e.target.value)}
         placeholder="e.g., An AI-powered meal planning app for busy families..."
-        className="min-h-[150px] text-lg bg-secondary border-2 border-border focus:ring-primary focus:border-primary p-4"
+        className="min-h-[150px] text-lg bg-card border-2 border-border focus:ring-primary focus:border-primary p-4"
       />
       <Button type="submit" size="lg" disabled={!idea.trim()} className="w-full md:w-auto">
         <Lightbulb className="mr-2 h-5 w-5" />
