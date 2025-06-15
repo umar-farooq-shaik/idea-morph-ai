@@ -1,0 +1,215 @@
+
+{
+  "ideaValidation": {
+    "title": "Idea Validation",
+    "summary": "Assessing the viability and potential of your startup concept.",
+    "content": "Your idea for an AI-powered meal planning app for busy families is highly relevant in today's market. Time-strapped parents are constantly seeking solutions for healthy, efficient meal preparation. The concept is practical, timely, and addresses a clear user need.",
+    "verdict": "Valid ✅",
+    "strengths": ["High market demand", "Solves a recurring problem", "Scalable business model"],
+    "risks": ["Crowded market space", "Requires sophisticated AI", "User retention can be challenging"],
+    "layout": "center-card",
+    "components": ["card", "badge"],
+    "colors": {
+      "background": "#111827",
+      "verdict": "#22C55E",
+      "strength": "#22C55E",
+      "risk": "#EF4444"
+    },
+    "cta": "Proceed with concept refinement. Focus on a unique value proposition to stand out."
+  },
+  "founderFit": {
+    "title": "Founder Fit",
+    "summary": "Aligning your skills and mindset with the startup's needs.",
+    "content": "To lead this startup, the ideal founder should be passionate about health and technology, empathetic to the struggles of busy families, and resilient in the face of competition. A blend of technical oversight and marketing acumen is crucial.",
+    "checklist": ["Passion for food/health tech", "User empathy", "Technical understanding (AI/ML)", "Marketing & branding skills", "Resilience and adaptability"],
+    "layout": "avatar-checklist",
+    "components": ["avatar", "checklist"],
+    "colors": {
+      "background": "#111827",
+      "primary": "#4F46E5",
+      "card": "#1F2937",
+      "text": "#E0E7FF"
+    },
+    "cta": "Assess your strengths and identify co-founder or early-hire needs for missing skills."
+  },
+  "competitorScan": {
+    "title": "Competitor Scan",
+    "summary": "Analyzing existing players in the meal planning market.",
+    "content": "The meal planning app space is competitive. Understanding your rivals is key to carving out your niche. We've identified three major players and analyzed their offerings.",
+    "competitors": [
+      { "name": "Mealime", "strength": "Simple, user-friendly interface.", "gap": "Limited customization and AI features." },
+      { "name": "eMeals", "strength": "Integrates with grocery delivery services.", "gap": "Subscription can be pricey for some users." },
+      { "name": "Paprika", "strength": "Powerful recipe management.", "gap": "More a recipe manager than a full meal planner; no AI." }
+    ],
+    "layout": "horizontal-cards",
+    "components": ["cards", "badge"],
+    "colors": {
+      "background": "#111827",
+      "card": "#1F2937",
+      "badge": "#FACC15"
+    },
+    "cta": "Develop a feature set that directly addresses the gaps left by competitors."
+  },
+  "targetAudience": {
+    "title": "Target Audience",
+    "summary": "Defining your Ideal Customer Profile (ICP).",
+    "content": "Your core audience consists of tech-savvy parents aged 28-45, juggling careers and family life. They value health, convenience, and are willing to pay for solutions that save them time and mental energy.",
+    "personas": [
+      {
+        "name": "Alex, the Working Mom",
+        "pain_points": ["No time for meal planning", "Wants healthy meals for kids", "Struggles with recipe variety"],
+        "habits": ["Uses productivity apps", "Shops online", "Active on Pinterest and Instagram for ideas"],
+        "needs": ["Automated grocery lists", "Quick & easy recipes", "Picky-eater-friendly options"]
+      }
+    ],
+    "layout": "persona-cards",
+    "components": ["cards", "tags"],
+    "colors": {
+      "background": "#1F2937",
+      "card": "#111827",
+      "tags": "#4F46E5"
+    },
+    "cta": "Tailor your marketing messages and app features to directly address Alex's pain points."
+  },
+  "problemSolution": {
+    "title": "Problem & Solution",
+    "summary": "Clearly articulating the value you provide.",
+    "content": "You're not just building an app; you're solving a deep-seated problem of modern family life.",
+    "problem": "Busy parents lack the time and mental bandwidth to consistently plan healthy, varied, and family-friendly meals, leading to stress, reliance on takeout, and food waste.",
+    "solution": "An AI-powered assistant that automates meal planning, generates personalized recipes based on dietary needs and preferences, and streamlines grocery shopping, giving parents back their time and peace of mind.",
+    "layout": "split-hero",
+    "components": ["hero"],
+    "colors": {
+      "problem": "#EF4444",
+      "solution": "#22C55E"
+    },
+    "cta": "Use this problem/solution framing in your landing page and investor pitch."
+  },
+  "roadmap": {
+    "title": "30-60-90 Day Roadmap",
+    "summary": "An actionable plan for the next three months.",
+    "content": "A clear roadmap is essential for maintaining momentum. Here is a proposed plan to get you from concept to MVP launch.",
+    "timeline": [
+      { "period": "Days 1-30", "title": "Foundation & Research", "tasks": ["Finalize core feature set", "Create detailed wireframes & UI mockups", "Conduct 10+ user interviews for validation"] },
+      { "period": "Days 31-60", "title": "MVP Development", "tasks": ["Develop core AI algorithm for recipe suggestions", "Build user authentication and profile management", "Integrate a recipe database API"] },
+      { "period": "Days 61-90", "title": "Beta Launch & Feedback", "tasks": ["Deploy MVP to a closed beta group (100 users)", "Set up analytics and feedback channels", "Iterate on features based on user data"] }
+    ],
+    "layout": "timeline",
+    "components": ["timeline", "checklist"],
+    "colors": {
+      "month1": "#312E81",
+      "month2": "#4338CA",
+      "month3": "#4F46E5"
+    },
+    "cta": "Start executing on the 30-day plan immediately. Focus on user interviews first."
+  },
+  "documentsNeeded": {
+    "title": "Key Documents",
+    "summary": "The essential paperwork for your startup.",
+    "content": "Having these documents prepared will make you look professional and ready for any opportunity, whether it's hiring, partnerships, or fundraising.",
+    "documents": [
+      { "name": "Pitch Deck", "description": "A 10-12 slide presentation for investors.", "icon": "file-text" },
+      { "name": "One-Pager", "description": "A concise summary of your business.", "icon": "file-text" },
+      { "name": "Lean Canvas", "description": "A single-page business plan.", "icon": "grid-2x2" },
+      { "name": "Vision/Mission Doc", "description": "Your company's north star.", "icon": "book-open" }
+    ],
+    "layout": "download-grid",
+    "components": ["grid", "icons"],
+    "colors": {
+      "button": "#4F46E5",
+      "card": "#1F2937",
+      "icon": "#A5B4FC"
+    },
+    "cta": "Create a first draft of your Lean Canvas this week."
+  },
+  "fundingStrategy": {
+    "title": "Funding Strategy",
+    "summary": "Choosing the right path to finance your venture.",
+    "content": "The right funding strategy depends on your goals and timeline. Given the technical requirements (AI development), a pre-seed round is recommended after initial validation.",
+    "strategies": [
+      { "name": "Bootstrapping", "description": "Self-funding. Slower growth, but you retain 100% equity. Good for initial validation on a small scale." },
+      { "name": "Pre-Seed Round ($50k - $250k)", "description": "Raise from angel investors or micro-VCs to build the MVP and hire a small team. Recommended for your idea to accelerate development." },
+      { "name": "Seed Round ($1M - $3M)", "description": "Raise after you have an MVP with demonstrated user traction to scale marketing and operations." }
+    ],
+    "layout": "accordion",
+    "components": ["accordion"],
+    "colors": {
+      "gradientFrom": "#4F46E5",
+      "gradientTo": "#312E81"
+    },
+    "cta": "Start building relationships with angel investors in the food-tech and AI space now."
+  },
+  "nameAndDomains": {
+    "title": "Name & Domain Ideas",
+    "summary": "Creative and available names for your startup.",
+    "content": "A great name is memorable, brandable, and available. Here are a few AI-generated suggestions.",
+    "names": [
+      { "name": "MealGenie", "com": true, "ai": true, "xyz": true },
+      { "name": "PlateIQ", "com": false, "ai": true, "xyz": true },
+      { "name": "KitchAI", "com": true, "ai": true, "xyz": true },
+      { "name": "MenuBot", "com": true, "ai": false, "xyz": true },
+      { "name": "FamilyTableAI", "com": false, "ai": true, "xyz": true }
+    ],
+    "layout": "list",
+    "components": ["list", "button"],
+    "colors": {
+      "available": "#22C55E",
+      "taken": "#EF4444"
+    },
+    "cta": "Secure your chosen name and domain immediately. 'MealGenie.ai' is a strong contender."
+  },
+  "businessModel": {
+    "title": "Business Model",
+    "summary": "How your startup will generate revenue.",
+    "content": "A freemium SaaS model is recommended. It allows users to experience the core value for free, encouraging wide adoption, while offering powerful premium features for a subscription fee.",
+    "models": [
+      { "name": "Freemium SaaS", "recommended": true, "description": "Free basic plan (e.g., 5 meal plans/month) and a paid premium plan ($9.99/month) with unlimited plans, advanced dietary filters, and grocery integration." },
+      { "name": "Pure Subscription", "recommended": false, "description": "Requires users to pay upfront, creating a higher barrier to entry." },
+      { "name": "Marketplace", "recommended": false, "description": "Taking a cut from grocery partners. More complex to build and requires significant scale." }
+    ],
+    "layout": "pill-cards",
+    "components": ["pills", "table"],
+    "colors": {
+      "saas": "#4F46E5",
+      "freemium": "#FACC15",
+      "b2b": "#22C55E"
+    },
+    "cta": "Define the exact features that will separate your free tier from your premium tier."
+  },
+  "chatbotSetup": {
+    "title": "Chatbot Setup",
+    "summary": "Automating customer support with an AI assistant.",
+    "content": "An initial chatbot can handle common user questions, freeing you up to focus on product development. Here are some starter questions and answers.",
+    "faqs": [
+      { "user": "How does the AI work?", "bot": "Our AI analyzes your family's dietary preferences, allergies, and past favorite meals to suggest new recipes you'll love!" },
+      { "user": "Can I import my own recipes?", "bot": "That's a great question! It's on our roadmap. Currently, our AI generates plans from our curated database of over 10,000 recipes." },
+      { "user": "Is there a free trial?", "bot": "We have a completely free plan that lets you create up to 5 meal plans per month! No credit card required to sign up." }
+    ],
+    "layout": "chat-simulation",
+    "components": ["chat"],
+    "colors": {
+      "bot": "#1F2937",
+      "user": "#4338CA"
+    },
+    "cta": "Integrate a simple chatbot widget on your landing page before launch."
+  },
+  "executionScore": {
+    "title": "Execution Score",
+    "summary": "Your startup's readiness for success.",
+    "content": "This score reflects the current potential of your startup based on the generated plan. It's a starting point, designed to be improved upon.",
+    "score": 85,
+    "breakdown": [
+      { "metric": "Clarity of Vision", "score": 90, "reason": "The problem and solution are very well-defined." },
+      { "metric": "Market Opportunity", "score": 85, "reason": "Large, accessible market but with notable competition." },
+      { "metric": "Founder/Idea Fit", "score": 80, "reason": "Strong fit, but potential skill gaps need to be addressed." }
+    ],
+    "layout": "circular-progress",
+    "components": ["chart", "legend"],
+    "colors": {
+      "low": "#EF4444",
+      "medium": "#FACC15",
+      "high": "#22C55E"
+    },
+    "cta": "Focus on de-risking the 'competition' factor to improve your score."
+  }
+}
