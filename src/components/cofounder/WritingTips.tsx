@@ -22,7 +22,7 @@ const WritingTips = () => {
               <div className="flex-shrink-0 bg-primary text-primary-foreground p-2 rounded-full w-10 h-10 flex items-center justify-center">
                 <span className="text-lg">{tip.emoji}</span>
               </div>
-              <div>
+              <div className="text-left">
                 <h3 className="font-medium text-foreground">{tip.title}</h3>
                 <p className="text-sm text-muted-foreground mt-1">{tip.text}</p>
               </div>
