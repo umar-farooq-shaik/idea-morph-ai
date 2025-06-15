@@ -1,8 +1,5 @@
 # 🚀 IdeaMorph AI – Morph Your Idea into a Startup
 
-> “From idea scribbles to structured startup plans — in under 30 seconds.”
-
----
 <p align="center">
   <img src="https://drive.google.com/uc?export=view&id=1-BhUBeJy_4Vfj-pY2j_lN0Qo8baG2nVj" alt="IdeaMorph AI Banner" />
 </p>
