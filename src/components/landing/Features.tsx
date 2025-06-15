@@ -1,37 +1,41 @@
 
-import { CheckCircle } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { CheckCircle, Medal, Search, Users, GitMerge, FileText, Landmark, Lightbulb, Briefcase, MessageSquare, Map, GaugeCircle } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 
-const features = [
-  "Idea Validation",
-  "Founder-Fit Analysis",
-  "Business Name & Domains",
-  "Target Audience Personas",
-  "Problem & Solution",
-  "Competitor Scan",
-  "Business Model Canvas",
-  "Funding Strategy",
-  "Execution Roadmap",
-  "Legal Documents",
-  "Marketing & Sales Plan",
-  "Chatbot Simulation"
+const featuresList: { title: string; icon: LucideIcon }[] = [
+    { title: "Idea Validation", icon: CheckCircle },
+    { title: "Founder Fit", icon: Medal },
+    { title: "Competitor Scan", icon: Search },
+    { title: "Target Audience", icon: Users },
+    { title: "Problem–Solution Fit", icon: GitMerge },
+    { title: "Roadmap", icon: Map },
+    { title: "Documents You Need", icon: FileText },
+    { title: "Funding Strategy", icon: Landmark },
+    { title: "Name & Domain Suggestions", icon: Lightbulb },
+    { title: "Business Model", icon: Briefcase },
+    { title: "Chatbot FAQ Setup", icon: MessageSquare },
+    { title: "Execution Score", icon: GaugeCircle },
 ];
 
 const Features = () => {
   return (
-    <section className="bg-secondary py-20 sm:py-24">
+    <section id="features" className="py-20 sm:py-24">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Everything You Need to Launch</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">What You Get – 12 AI-Generated Sections</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            From a spark of an idea to a full-fledged business blueprint.
+            A complete, expert-level business plan covering every critical area of your startup.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-8">
-          {features.map((feature) => (
-            <div key={feature} className="flex items-center gap-3">
-              <CheckCircle className="h-5 w-5 text-accent" />
-              <span className="text-muted-foreground">{feature}</span>
-            </div>
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {featuresList.map((feature) => (
+            <Card key={feature.title} className="bg-card shadow-md hover:shadow-lg transition-shadow border-border">
+              <CardContent className="p-6 flex items-center gap-4">
+                <feature.icon className="h-6 w-6 text-accent" />
+                <span className="font-semibold text-foreground">{feature.title}</span>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
