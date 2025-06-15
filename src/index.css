@@ -14,8 +14,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 28% 17%; /* gray-800 */
 
-    --primary: 242 100% 70%;
-    --primary-foreground: 215 28% 17%;
+    --primary: 221 83% 53%;         /* blue-600 */
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 215 28% 17%; /* gray-800 */
@@ -31,7 +31,7 @@
 
     --border: 220 13% 91%;          /* slate-200 */
     --input: 220 13% 91%;           /* slate-200 */
-    --ring: 242 100% 70%;
+    --ring: 221 83% 53%;            /* blue-600 */
 
     --radius: 0.5rem;
   }
