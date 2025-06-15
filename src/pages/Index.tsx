@@ -1,11 +1,14 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
 import Header from '@/components/Header';
 import IdeaForm from '@/components/cofounder/IdeaForm';
 import ResultsDisplay from '@/components/cofounder/ResultsDisplay';
 import sampleData from '@/data/sample-response.json';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 
 // Define the type for the AI response
 export type CofounderResponse = typeof sampleData;
@@ -14,21 +17,62 @@ const Index = () => {
   const [idea, setIdea] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [response, setResponse] = useState<CofounderResponse | null>(null);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const handleSubmit = (submittedIdea: string) => {
+  const handleSubmit = async (submittedIdea: string) => {
+    if (isLoading) return;
     setIdea(submittedIdea);
+    setResponse(null);
     setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      setResponse(sampleData);
+    
+    try {
+      const { data, error } = await supabase.functions.invoke('generate-blueprint', {
+        body: { idea: submittedIdea },
+      });
+
+      if (error) throw error;
+      
+      // The function now returns a string, so we need to parse it.
+      // Sometimes the AI might return a string that is not a valid JSON.
+      // We will try to parse it, but if it fails, we will show an error.
+      let parsedData;
+      if (typeof data === 'string') {
+        try {
+          parsedData = JSON.parse(data);
+        } catch (e) {
+          console.error("Failed to parse AI response:", e);
+          throw new Error("The AI returned an invalid response format. Please try again.");
+        }
+      } else {
+        parsedData = data;
+      }
+
+      setResponse(parsedData);
+    } catch (error: any) {
+      console.error('Error generating blueprint:', error);
+      toast.error('Failed to generate blueprint', {
+        description: error.message || 'An unexpected error occurred. Please check the console and try again.',
+      });
+      setResponse(null);
+    } finally {
       setIsLoading(false);
-    }, 2000);
+    }
   };
 
   const handleReset = () => {
     setIdea('');
     setResponse(null);
   };
+
+  useEffect(() => {
+    const ideaFromUrl = searchParams.get('idea');
+    if (ideaFromUrl && !isLoading && !response) {
+      handleSubmit(ideaFromUrl);
+      // Clean up URL
+      searchParams.delete('idea');
+      setSearchParams(searchParams, { replace: true });
+    }
+  }, [searchParams]);
 
   return (
     <div className="min-h-screen bg-background text-foreground w-full">
@@ -49,6 +93,7 @@ const Index = () => {
               <div>
                 <Loader2 className="h-16 w-16 animate-spin mx-auto text-primary" />
                 <p className="mt-4 text-lg text-muted-foreground">Your AI Cofounder is building your startup plan...</p>
+                <p className="mt-2 text-sm text-muted-foreground">This can take up to 30 seconds.</p>
               </div>
             ) : (
               <IdeaForm onSubmit={handleSubmit} />
