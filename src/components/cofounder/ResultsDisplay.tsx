@@ -42,14 +42,14 @@ const ResultsDisplay = ({ response }: ResultsDisplayProps) => {
 
   return (
     <Tabs defaultValue={sections[0][0]} orientation="vertical" className="w-full flex flex-col md:flex-row md:gap-6">
-      <TabsList className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:flex md:flex-col md:w-[280px] md:flex-shrink-0 md:bg-gray-50 md:p-2 md:rounded-lg md:space-y-1 h-auto bg-transparent p-0">
+      <TabsList className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:flex md:flex-col md:w-[280px] md:flex-shrink-0 md:bg-secondary md:p-2 md:rounded-lg md:space-y-1 h-auto bg-transparent p-0">
         {sections.map(([key, value]) => {
           const Icon = sectionMap[key as keyof typeof sectionMap]?.icon || Lightbulb;
           return (
             <TabsTrigger
               key={key}
               value={key}
-              className="w-full flex gap-2 justify-start p-3 text-gray-900 rounded-md data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-sm hover:bg-gray-100 data-[state=active]:hover:bg-blue-700"
+              className="w-full flex gap-2 justify-start p-3 text-foreground rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm hover:bg-muted data-[state=active]:hover:bg-primary/90"
             >
               <Icon className="h-5 w-5 flex-shrink-0" />
               <span className="truncate">{value.title}</span>
