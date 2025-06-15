@@ -13,7 +13,7 @@ const CallToAction = () => {
           </p>
           <div className="mt-8">
             <Button size="lg" asChild>
-              <Link to="/app">Try Cofounder AI Now</Link>
+              <Link to="/app">Try IdeaMorph AI Now</Link>
             </Button>
           </div>
         </div>

@@ -92,7 +92,7 @@ const Index = () => {
             {isLoading ? (
               <div>
                 <Loader2 className="h-16 w-16 animate-spin mx-auto text-primary" />
-                <p className="mt-4 text-lg text-muted-foreground">Your AI Cofounder is building your startup plan...</p>
+                <p className="mt-4 text-lg text-muted-foreground">IdeaMorph AI is building your startup plan...</p>
                 <p className="mt-2 text-sm text-muted-foreground">This can take up to 30 seconds.</p>
               </div>
             ) : (

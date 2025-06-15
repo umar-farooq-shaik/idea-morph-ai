@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -45,7 +46,7 @@ const Navbar = () => {
                 {link.title}
               </a>)}
             <Button asChild className="mt-2">
-              <Link to="/app">Try Cofounder AI</Link>
+              <Link to="/app">Try IdeaMorph AI</Link>
             </Button>
           </nav>
         </div>}

@@ -1,3 +1,4 @@
+
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
@@ -7,7 +8,7 @@ const corsHeaders = {
 };
 
 const getPrompt = (idea: string) => `
-You are Cofounder AI — an expert AI startup assistant.
+You are IdeaMorph AI — an expert AI startup assistant.
 
 The user has submitted this startup idea:
 ---

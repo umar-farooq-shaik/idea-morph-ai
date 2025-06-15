@@ -4,7 +4,7 @@ import Hero from '@/components/landing/Hero';
 import HowItWorks from '@/components/landing/HowItWorks';
 import Features from '@/components/landing/Features';
 import IdeaFormSection from '@/components/landing/IdeaFormSection';
-import WhyCofounderAI from '@/components/landing/WhyCofounderAI';
+import WhyIdeaMorphAI from '@/components/landing/WhyIdeaMorphAI';
 import Testimonials from '@/components/landing/Testimonials';
 import WhosItFor from '@/components/landing/WhosItFor';
 import FAQ from '@/components/landing/FAQ';
@@ -24,7 +24,7 @@ const Landing = () => {
         <HowItWorks />
         <Features />
         <IdeaFormSection />
-        <WhyCofounderAI />
+        <WhyIdeaMorphAI />
         <Testimonials />
         <WhosItFor />
         <FAQ />

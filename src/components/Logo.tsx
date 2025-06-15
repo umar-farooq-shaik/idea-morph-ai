@@ -7,7 +7,7 @@ const Logo = () => {
     <Link to="/" className="flex items-center gap-2">
       <Rocket size={28} className="text-primary" />
       <span className="font-heading text-2xl font-bold text-foreground">
-        Cofounder AI
+        IdeaMorph AI
       </span>
     </Link>
   );
