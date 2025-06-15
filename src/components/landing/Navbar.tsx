@@ -1,8 +1,8 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { BrainCircuit, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import Logo from '@/components/Logo';
 
 const navLinks = [
   { title: 'Features', href: '#features' },
@@ -18,11 +18,7 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <div className="mr-auto flex items-center">
-          <Link to="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-primary">
-              Cofounder<span className="text-accent">AI</span>
-            </span>
-          </Link>
+          <Logo />
         </div>
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
