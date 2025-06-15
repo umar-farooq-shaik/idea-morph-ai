@@ -55,7 +55,7 @@ const sectionOrder: Array<keyof CofounderResponse> = [
 const ResultsDisplay = ({ response }: ResultsDisplayProps) => {
   const sections = sectionOrder
     .filter(key => response[key])
-    .map(key => [key, response[key]]);
+    .map(key => [key, response[key]] as const);
 
   if (!sections.length) {
     return null;
@@ -74,7 +74,7 @@ const ResultsDisplay = ({ response }: ResultsDisplayProps) => {
           return (
             <TabsTrigger
               key={key}
-              value={key as string}
+              value={key}
               className="w-full flex gap-2 justify-start p-3 text-foreground rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm hover:bg-muted data-[state=active]:hover:bg-primary/90"
             >
               <Icon className="h-5 w-5 flex-shrink-0" />
@@ -90,7 +90,7 @@ const ResultsDisplay = ({ response }: ResultsDisplayProps) => {
           if (!Component) return null;
           
           return (
-            <TabsContent key={key} value={key as string} className="mt-0 ring-offset-background focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0">
+            <TabsContent key={key} value={key} className="mt-0 ring-offset-background focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0">
               <Component data={value} />
             </TabsContent>
           );
