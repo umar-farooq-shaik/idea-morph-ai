@@ -51,12 +51,6 @@ Each section is AI-generated in real-time using structured prompts optimized for
 - **Google Gemini 1.5 Flash** – Primary AI model for startup blueprint generation
 - **PostgreSQL** – (Future) User persistence and history tracking
 
-### 🚀 Development & Deployment
-
-- **Lovable** – For rapid prototyping and live deployment
-- **GitHub** – Version control and CI
-- **ESLint + Prettier** – Linting and code quality enforcement
-
 ---
 
 ## 🌟 Key Features
@@ -92,7 +86,6 @@ Each section is AI-generated in real-time using structured prompts optimized for
 
 ## 🎓 What We Learned
 
-- Prompt engineering is both art and science — structure is key
 - React tab interfaces require dynamic component design
 - Supabase Edge Functions are powerful for stateless AI integration
 - TypeScript provides immense stability in AI-driven apps
