@@ -21,7 +21,6 @@ const ExecutionScoreCircle = ({ data }) => {
             >
               <RadialBar
                 background
-                clockWise
                 dataKey="value"
               />
               <text
@@ -55,3 +54,4 @@ const ExecutionScoreCircle = ({ data }) => {
 };
 
 export default ExecutionScoreCircle;
+
