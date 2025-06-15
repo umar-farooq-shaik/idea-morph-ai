@@ -68,16 +68,14 @@
     --ring: 212.7 26.8% 83.9%;
 
     /* Sidebar */
-    --sidebar-background: 222.2 47.4% 11.2%; /* slate-900 */
+    --sidebar-background: 221 39% 11%; /* dark blue */
     --sidebar-foreground: 210 40% 98%; /* slate-50 */
     --sidebar-border: 217.2 32.6% 17.5%; /* slate-800 */
     --sidebar-accent: 210 40% 98%; /* slate-50 */
     --sidebar-accent-foreground: 222.2 47.4% 11.2%; /* slate-900 */
     --sidebar-ring: 212.7 26.8% 83.9%; /* slate-300 */
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
