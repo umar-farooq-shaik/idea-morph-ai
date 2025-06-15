@@ -1,5 +1,4 @@
 
-```tsx
 import React from 'react';
 
 const tips = [
@@ -36,4 +35,3 @@ const WritingTips = () => {
 };
 
 export default WritingTips;
-```
