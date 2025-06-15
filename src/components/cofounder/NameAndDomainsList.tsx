@@ -20,9 +20,9 @@ const NameAndDomainsList = ({ data }) => {
           <li key={i} className="flex items-center justify-between p-4 bg-secondary rounded-lg">
             <span className="font-bold text-lg">{item.name}</span>
             <div className="flex items-center gap-3">
-              <span className="text-xs font-mono p-1 rounded" style={{ backgroundColor: item.com ? data.colors.available : data.colors.taken }}>.com</span>
-              <span className="text-xs font-mono p-1 rounded" style={{ backgroundColor: item.ai ? data.colors.available : data.colors.taken }}>.ai</span>
-              <span className="text-xs font-mono p-1 rounded" style={{ backgroundColor: item.xyz ? data.colors.available : data.colors.taken }}>.xyz</span>
+              <span className={`text-xs font-mono p-1 rounded ${item.com ? 'bg-accent text-accent-foreground' : 'bg-destructive text-destructive-foreground'}`}>.com</span>
+              <span className={`text-xs font-mono p-1 rounded ${item.ai ? 'bg-accent text-accent-foreground' : 'bg-destructive text-destructive-foreground'}`}>.ai</span>
+              <span className={`text-xs font-mono p-1 rounded ${item.xyz ? 'bg-accent text-accent-foreground' : 'bg-destructive text-destructive-foreground'}`}>.xyz</span>
               <Button variant="ghost" size="icon" onClick={() => handleCopy(item.name)}>
                 <Copy className="h-4 w-4" />
               </Button>

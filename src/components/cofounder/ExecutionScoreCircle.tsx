@@ -3,7 +3,13 @@ import SectionCard from './SectionCard';
 import { ResponsiveContainer, RadialBarChart, RadialBar } from 'recharts';
 
 const ExecutionScoreCircle = ({ data }) => {
-  const scoreColor = data.score < 50 ? data.colors.low : data.score < 80 ? data.colors.medium : data.colors.high;
+  const getScoreColor = (score: number) => {
+    if (score < 50) return 'hsl(var(--destructive))';
+    if (score < 80) return 'hsl(var(--primary))';
+    return 'hsl(var(--accent))';
+  }
+  
+  const scoreColor = getScoreColor(data.score);
   const chartData = [{ name: 'Execution Score', value: data.score, fill: scoreColor }];
 
   return (
@@ -54,4 +60,3 @@ const ExecutionScoreCircle = ({ data }) => {
 };
 
 export default ExecutionScoreCircle;
-

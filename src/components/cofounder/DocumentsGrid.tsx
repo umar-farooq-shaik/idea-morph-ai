@@ -16,11 +16,11 @@ const DocumentsGrid = ({ data }) => (
       {data.documents.map((doc, i) => {
         const Icon = iconMap[doc.icon] || FileText;
         return (
-          <div key={i} className="p-6 rounded-lg flex flex-col items-center text-center" style={{ backgroundColor: data.colors.card }}>
-            <Icon className="h-12 w-12 mb-4" style={{ color: data.colors.icon }} />
+          <div key={i} className="p-6 rounded-lg flex flex-col items-center text-center bg-secondary">
+            <Icon className="h-12 w-12 mb-4 text-primary" />
             <h4 className="font-bold text-lg">{doc.name}</h4>
             <p className="text-sm text-muted-foreground mt-1 mb-4 flex-grow">{doc.description}</p>
-            <Button style={{ backgroundColor: data.colors.button }}>
+            <Button>
               <Download className="mr-2 h-4 w-4" /> Download Template
             </Button>
           </div>

@@ -9,7 +9,7 @@ const FundingStrategyAccordion = ({ data }) => (
       {data.strategies.map((s, i) => (
         <AccordionItem key={i} value={`item-${i}`}>
           <AccordionTrigger className="text-lg font-bold">{s.name}</AccordionTrigger>
-          <AccordionContent className="text-base text-gray-300">
+          <AccordionContent className="text-base text-muted-foreground">
             {s.description}
           </AccordionContent>
         </AccordionItem>
