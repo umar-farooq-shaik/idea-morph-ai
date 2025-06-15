@@ -9,17 +9,16 @@ import Testimonials from '@/components/landing/Testimonials';
 import WhosItFor from '@/components/landing/WhosItFor';
 import FAQ from '@/components/landing/FAQ';
 import FinalCTA from '@/components/landing/FinalCTA';
-import Footer from '@/components/landing/Footer';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
 const Landing = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground scroll-smooth relative">
+    <div className="min-h-screen bg-background text-foreground scroll-smooth relative flex flex-col">
       <div className="absolute top-6 right-6 z-10">
         <ThemeToggle />
       </div>
       <Navbar />
-      <main>
+      <main className="flex-grow">
         <Hero />
         <HowItWorks />
         <Features />
@@ -28,9 +27,8 @@ const Landing = () => {
         <Testimonials />
         <WhosItFor />
         <FAQ />
-        <FinalCTA />
       </main>
-      <Footer />
+      <FinalCTA />
     </div>
   );
 };
