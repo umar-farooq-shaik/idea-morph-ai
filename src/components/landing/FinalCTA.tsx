@@ -7,7 +7,7 @@ const FinalCTA = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-2">
-            <span className="font-bold">Cofounder<span className="text-accent">AI</span></span>
+            <span className="font-bold">Cofounder<span className="text-accent-foreground">AI</span></span>
             <span className="text-primary-foreground/70 text-sm ml-4 hidden sm:inline">Smarter Startups Begin Here.</span>
           </div>
           <div className="flex gap-6 text-sm text-primary-foreground/70">
