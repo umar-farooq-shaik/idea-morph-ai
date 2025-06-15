@@ -4,7 +4,7 @@ import { ThemeToggle } from './ThemeToggle';
 
 const Header = () => {
   return (
-    <header className="flex justify-between items-center py-4 border-b mb-8">
+    <header className="flex justify-between items-center h-16 border-b mb-8">
       <Logo />
       <ThemeToggle />
     </header>
