@@ -53,7 +53,9 @@ const sectionOrder: Array<keyof CofounderResponse> = [
 ];
 
 const ResultsDisplay = ({ response }: ResultsDisplayProps) => {
-  const sections = sectionOrder.map(key => [key, response[key]]).filter(([, value]) => value);
+  const sections = sectionOrder
+    .filter(key => response[key])
+    .map(key => [key, response[key]]);
 
   if (!sections.length) {
     return null;
