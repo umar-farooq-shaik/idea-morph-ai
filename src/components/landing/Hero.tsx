@@ -1,6 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -14,10 +15,10 @@ const Hero = () => {
         </p>
         <div className="mt-8 flex justify-center">
           <Button size="lg" asChild>
-            <a href="#idea-form">
+            <Link to="/app">
               Enter Your Idea
               <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
+            </Link>
           </Button>
         </div>
       </div>
