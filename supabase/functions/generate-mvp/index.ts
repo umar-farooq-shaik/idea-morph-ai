@@ -21,37 +21,58 @@ serve(async (req) => {
       throw new Error('Idea is required');
     }
 
-    const prompt = `You are an AI software engineer.
+    const prompt = `You are a senior full-stack software engineer.
 
-Please generate a full MVP from the startup idea below.
+From the following startup idea, generate a working MVP with the following features:
 
 ---
 
-💡 Startup Idea: "${idea}"
+💡 Startup Idea:
+"${idea}"
 
-🎯 Generate:
+---
 
-1. **Landing Page UI**
-   - Hero section with tagline
-   - About section, Features, CTA button
-   - Use React/JSX
+🎯 Requirements:
 
-2. **Authentication System**
-   - Signup/Login with email & password
-   - Use Firebase Auth or Node.js with JWT
+1. **Landing Page** (HTML or React)
+   - Includes a hero section, features, about, and a CTA button
+   - Responsive and clean design
+   - Use modern CSS styling with gradients and animations
 
-3. **Database Schema**
-   - 3+ collections with relevant fields
-   - Format for MongoDB Mongoose
+2. **Authentication**
+   - Email/password signup and login
+   - Use either Firebase Auth or Node.js + JWT (choose one)
+   - Provide UI + backend logic
+
+3. **Basic Database**
+   - Design 3–4 data models relevant to the idea
+   - Use MongoDB + Mongoose or Firebase Firestore (choose one)
+   - Include sample schema definitions
 
 4. **Folder Structure**
-   - Provide file tree
-   - Separate: /frontend, /backend, /database
+   - Show entire project layout:
+     ```
+     /frontend
+       /components
+       App.jsx
+     /backend
+       server.js
+       /routes
+     /database
+       models/
+     ```
+   - Provide this as a Markdown tree
 
-📦 Final Output:
-- Return as JSON with these exact keys: frontendCode, backendCode, databaseSchema, folderStructure
-- Each value should be a string containing the relevant code
-- Make sure code is clean and can be exported as a deployable MVP
+5. **Code Format**
+   - Use Markdown headings:
+     ## Landing Page
+     ## Auth System
+     ## Database
+     ## Folder Structure
+
+   - Make the code copy-paste ready. Do not explain unless asked.
+
+Return as JSON with keys: frontendCode, backendCode, databaseSchema, folderStructure
 
 Return only valid JSON, no explanations or markdown formatting.`;
 
@@ -85,10 +106,10 @@ Return only valid JSON, no explanations or markdown formatting.`;
     } catch (e) {
       // If parsing fails, create a structured response
       mvpData = {
-        frontendCode: generatedText.split('Frontend Code:')[1]?.split('Backend Code:')[0]?.trim() || 'Error generating frontend code',
-        backendCode: generatedText.split('Backend Code:')[1]?.split('Database Schema:')[0]?.trim() || 'Error generating backend code',
-        databaseSchema: generatedText.split('Database Schema:')[1]?.split('Folder Structure:')[0]?.trim() || 'Error generating database schema',
-        folderStructure: generatedText.split('Folder Structure:')[1]?.trim() || 'Error generating folder structure'
+        frontendCode: generatedText.split('## Landing Page')[1]?.split('## Auth System')[0]?.trim() || 'Error generating frontend code',
+        backendCode: generatedText.split('## Auth System')[1]?.split('## Database')[0]?.trim() || 'Error generating backend code',
+        databaseSchema: generatedText.split('## Database')[1]?.split('## Folder Structure')[0]?.trim() || 'Error generating database schema',
+        folderStructure: generatedText.split('## Folder Structure')[1]?.trim() || 'Error generating folder structure'
       };
     }
 
