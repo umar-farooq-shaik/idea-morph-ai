@@ -106,7 +106,27 @@ Return only valid JSON, no explanations or markdown formatting.`;
     try {
       // Remove any markdown code blocks if present
       const cleanedText = generatedText.replace(/```json\n?|\n?```/g, '').trim();
-      mvpData = JSON.parse(cleanedText);
+      const parsedResponse = JSON.parse(cleanedText);
+      
+      // Handle nested structure from Gemini
+      if (parsedResponse.frontendCode && typeof parsedResponse.frontendCode === 'object') {
+        // If frontendCode is an object with multiple files, combine them
+        mvpData = {
+          frontendCode: Object.values(parsedResponse.frontendCode).join('\n\n'),
+          backendCode: typeof parsedResponse.backendCode === 'object' 
+            ? Object.values(parsedResponse.backendCode).join('\n\n')
+            : parsedResponse.backendCode || '',
+          databaseSchema: typeof parsedResponse.databaseSchema === 'object'
+            ? JSON.stringify(parsedResponse.databaseSchema, null, 2)
+            : parsedResponse.databaseSchema || '',
+          folderStructure: typeof parsedResponse.folderStructure === 'object'
+            ? JSON.stringify(parsedResponse.folderStructure, null, 2)
+            : parsedResponse.folderStructure || ''
+        };
+      } else {
+        // If it's already in the expected format
+        mvpData = parsedResponse;
+      }
     } catch (e) {
       console.log('Failed to parse as JSON, creating structured response');
       // If parsing fails, create a structured response
