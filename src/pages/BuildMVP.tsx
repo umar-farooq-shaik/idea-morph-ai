@@ -149,7 +149,7 @@ ${mvpResponse.folderStructure}
                   className={activeView === 'code' ? 'bg-purple-500 text-white' : 'text-purple-700 hover:text-purple-800'}
                 >
                   <Code2 className="h-4 w-4 mr-1" />
-                  </> Code
+                  {'</>'} Code
                 </Button>
               </div>
             </div>
