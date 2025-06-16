@@ -21,6 +21,8 @@ serve(async (req) => {
       throw new Error('Idea is required');
     }
 
+    console.log('Generating MVP for idea:', idea);
+
     const prompt = `You are a senior full-stack software engineer.
 
 From the following startup idea, generate a working MVP with the following features:
@@ -51,7 +53,7 @@ From the following startup idea, generate a working MVP with the following featu
 
 4. **Folder Structure**
    - Show entire project layout:
-     ```
+     \`\`\`
      /frontend
        /components
        App.jsx
@@ -60,7 +62,7 @@ From the following startup idea, generate a working MVP with the following featu
        /routes
      /database
        models/
-     ```
+     \`\`\`
    - Provide this as a Markdown tree
 
 5. **Code Format**
@@ -97,6 +99,8 @@ Return only valid JSON, no explanations or markdown formatting.`;
     const data = await response.json();
     const generatedText = data.candidates[0].content.parts[0].text;
 
+    console.log('Generated text from Gemini:', generatedText);
+
     // Try to parse the response as JSON
     let mvpData;
     try {
@@ -104,6 +108,7 @@ Return only valid JSON, no explanations or markdown formatting.`;
       const cleanedText = generatedText.replace(/```json\n?|\n?```/g, '').trim();
       mvpData = JSON.parse(cleanedText);
     } catch (e) {
+      console.log('Failed to parse as JSON, creating structured response');
       // If parsing fails, create a structured response
       mvpData = {
         frontendCode: generatedText.split('## Landing Page')[1]?.split('## Auth System')[0]?.trim() || 'Error generating frontend code',
@@ -112,6 +117,8 @@ Return only valid JSON, no explanations or markdown formatting.`;
         folderStructure: generatedText.split('## Folder Structure')[1]?.trim() || 'Error generating folder structure'
       };
     }
+
+    console.log('Final MVP data:', mvpData);
 
     return new Response(JSON.stringify(mvpData), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
