@@ -104,28 +104,50 @@ Return only valid JSON, no explanations or markdown formatting.`;
     // Try to parse the response as JSON
     let mvpData;
     try {
-      // Remove any markdown code blocks if present
-      const cleanedText = generatedText.replace(/```json\n?|\n?```/g, '').trim();
+      // Remove any markdown code blocks and language prefixes
+      let cleanedText = generatedText.replace(/```json\n?|\n?```/g, '').trim();
+      
+      // Clean up any remaining code block language identifiers
+      cleanedText = cleanedText.replace(/```\w+\n?/g, '').replace(/\n?```/g, '');
+      
       const parsedResponse = JSON.parse(cleanedText);
+      
+      // Clean up individual code sections by removing language prefixes
+      const cleanCodeSection = (code) => {
+        if (typeof code === 'string') {
+          // Remove language identifiers like jsx, javascript, etc.
+          return code.replace(/^(jsx|javascript|js|typescript|ts|html|css)\n/, '').trim();
+        }
+        return code;
+      };
       
       // Handle nested structure from Gemini
       if (parsedResponse.frontendCode && typeof parsedResponse.frontendCode === 'object') {
         // If frontendCode is an object with multiple files, combine them
         mvpData = {
-          frontendCode: Object.values(parsedResponse.frontendCode).join('\n\n'),
+          frontendCode: Object.values(parsedResponse.frontendCode)
+            .map(code => cleanCodeSection(code))
+            .join('\n\n'),
           backendCode: typeof parsedResponse.backendCode === 'object' 
-            ? Object.values(parsedResponse.backendCode).join('\n\n')
-            : parsedResponse.backendCode || '',
+            ? Object.values(parsedResponse.backendCode)
+                .map(code => cleanCodeSection(code))
+                .join('\n\n')
+            : cleanCodeSection(parsedResponse.backendCode || ''),
           databaseSchema: typeof parsedResponse.databaseSchema === 'object'
             ? JSON.stringify(parsedResponse.databaseSchema, null, 2)
-            : parsedResponse.databaseSchema || '',
+            : cleanCodeSection(parsedResponse.databaseSchema || ''),
           folderStructure: typeof parsedResponse.folderStructure === 'object'
             ? JSON.stringify(parsedResponse.folderStructure, null, 2)
             : parsedResponse.folderStructure || ''
         };
       } else {
-        // If it's already in the expected format
-        mvpData = parsedResponse;
+        // If it's already in the expected format, clean the code sections
+        mvpData = {
+          frontendCode: cleanCodeSection(parsedResponse.frontendCode || ''),
+          backendCode: cleanCodeSection(parsedResponse.backendCode || ''),
+          databaseSchema: cleanCodeSection(parsedResponse.databaseSchema || ''),
+          folderStructure: parsedResponse.folderStructure || ''
+        };
       }
     } catch (e) {
       console.log('Failed to parse as JSON, creating structured response');
