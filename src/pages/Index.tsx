@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
 import Header from '@/components/Header';
@@ -18,6 +18,7 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [response, setResponse] = useState<CofounderResponse | null>(null);
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const handleSubmit = async (submittedIdea: string) => {
     if (isLoading) return;
@@ -64,6 +65,10 @@ const Index = () => {
     setResponse(null);
   };
 
+  const handleBuildMVP = () => {
+    navigate('/build-mvp', { state: { idea } });
+  };
+
   useEffect(() => {
     const ideaFromUrl = searchParams.get('idea');
     if (ideaFromUrl && !isLoading && !response) {
@@ -81,9 +86,17 @@ const Index = () => {
       <main className="container mx-auto p-4 md:p-8">
         {response ? (
           <div>
-            <div className="flex justify-between items-center mb-6">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
                <h2 className="text-2xl font-bold text-muted-foreground">Your Startup Blueprint for: <span className="text-foreground">{idea}</span></h2>
-              <Button onClick={handleReset} variant="outline">Start Over</Button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button onClick={handleReset} variant="outline">🔁 Start Over</Button>
+                <Button 
+                  onClick={handleBuildMVP} 
+                  className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                >
+                  🧱 Build MVP
+                </Button>
+              </div>
             </div>
             <ResultsDisplay response={response} />
           </div>
